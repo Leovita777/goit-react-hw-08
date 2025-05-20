@@ -1,4 +1,4 @@
-.contactForm {
+.loginForm {
   background-color: #00afd7;
   width: 400px;
   display: flex;
@@ -26,7 +26,7 @@
   background-color: #d8d0d0;
 }
 
-.iconContact {
+.iconLogin {
   fill: #7e7e7e;
   position: absolute;
   top: 30px;
@@ -52,8 +52,22 @@
   cursor: pointer;
   width: 150px;
   margin-left: auto;
-  margin-top: 15px;
+  margin-top: 10px;
   border: 0.5px solid #7e7e7e;
+}
+
+.btnIcons {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 27px;
+  right: 2px;
+}
+
+.iconsPass {
+  width: 20px;
+  height: 20px;
+  color: #000000;
 }
 
 .containerForm {

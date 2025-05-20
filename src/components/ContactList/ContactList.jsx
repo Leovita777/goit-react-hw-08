@@ -1,24 +1,26 @@
-import css from "./ContactList.module.css";
-import Contact from "../Contact/Contact";
 import { useSelector } from "react-redux";
-import { selectFilteredContacts } from "../../redux/contactsSlice";
+import { selectFilteredContacts } from "../../redux/filters/selectors";
+import Contact from "../Contact/Contact";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import css from "./ContactList.module.css";
 
-const ContactList = () => {
-  const contactsToDisplay = useSelector(selectFilteredContacts);
+function ContactList() {
+  const contacts = useSelector(selectFilteredContacts);
 
-  return (
+  return Array.isArray(contacts) && contacts.length > 0 ? (
+    <ul className={css.contactList}>
+      {contacts.map((contact) => (
+        <Contact key={contact.id} {...contact} />
+      ))}
+    </ul>
+  ) : (
     <div>
-      {contactsToDisplay && contactsToDisplay.length > 0 ? (
-        <ul className={css.contactList}>
-          {contactsToDisplay.map((contact) => (
-            <Contact key={contact.id} contact={contact} />
-          ))}
-        </ul>
-      ) : (
-        <p className={css.text}>No contacts yet</p>
-      )}
+      <ErrorMessage
+        className={css.textMessage}
+        message={"No such contact exists"}
+      />
     </div>
   );
-};
+}
 
 export default ContactList;
