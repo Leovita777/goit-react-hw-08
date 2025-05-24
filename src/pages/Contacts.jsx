@@ -4,7 +4,7 @@ import { fetchContacts } from "../redux/contacts/operations";
 import { selectContacts, selectIsLoading } from "../redux/contacts/selectors";
 
 import DocumentTitle from "../components/DocumentTitle";
-import ContactList from "../components/ContsctList/ContactList";
+import ContactList from "../components/ContactList/ContactList";
 import SearchBox from "../components/SearchBox/SearchBox";
 import ContactForm from "../components/ContactForm/ContactForm";
 import Loader from "../components/Loader/Loader";
